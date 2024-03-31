@@ -1,0 +1,380 @@
+:root {
+  --warm-gradient: linear-gradient(
+    90deg,
+    hsla(33, 100%, 53%, 1) 0%,
+    hsla(58, 100%, 68%, 1) 100%
+  );
+
+  --cold-gradient: linear-gradient(
+    90deg,
+    hsl(206, 100%, 40%) 3%,
+    hsla(206, 100%, 50%, 1) 50%,
+    hsla(206, 100%, 63%, 1) 100%
+  );
+}
+
+@font-face {
+  font-family: "Font";
+  src: url(./assets/font/hsdlfhshhweoa.woff2) format("woff2");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Font", sans-serif;
+}
+
+body {
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background: var(--cold-gradient);
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.inner_width {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  /* border: 1px solid red; */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  height: max-content;
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  padding: 20px 50px;
+  background-color: #fff;
+}
+
+.container .container_top_section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: max-content;
+  /* border: 1px solid red; */
+}
+
+.container_top_section img {
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+.container_search_section {
+  align-self: center;
+  margin-top: 50px;
+  display: flex;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  .container_search_section_input {
+    width: 100%;
+    height: 40px;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    padding: 0 10px;
+    font-size: 16px;
+    outline: none;
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+
+    &:focus {
+      border-color: #000;
+    }
+  }
+
+  .container_search_section_button {
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    background-color: #000;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    font-weight: 500;
+
+    &:hover {
+      background-color: #333;
+    }
+  }
+}
+
+.container_main_section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  height: 100%;
+  /* border: 1px solid red; */
+}
+
+.container_main_section_current {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1px solid #ccc; */
+  width: 50%;
+  color: hsl(0, 0%, 50%);
+  font-size: 20px;
+}
+
+.container_main_section_current_weather {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: max-content;
+  justify-content: space-between;
+  padding: 5px 25px;
+}
+
+.container_main_section_current_weather_location {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid black; */
+  align-items: center;
+}
+
+.container_main_section_current_weather_location_heading {
+  font-weight: 500;
+  color: #000;
+}
+
+.container_main_section_current_weather_location_sub_heading {
+  font-size: 16px;
+}
+
+.container_main_section_current_weather_overcast {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .heading {
+    font-weight: 500;
+    color: #000;
+  }
+
+  .sub_heading {
+    font-size: 16px;
+  }
+}
+
+.container_main_section_current_air_conditions {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.container_main_section_current_air_conditions_field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+  padding: 5px 10px;
+  width: 100%;
+  height: max-content;
+
+  .top {
+    display: flex;
+    font-size: 16px;
+
+    img {
+      margin-right: 5px;
+    }
+  }
+}
+
+.container_main_section_current_air_conditions_field_child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container_main_section_current_air_conditions_field_child > p {
+  color: #000;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+.container_main_section_current_hourly {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container_main_section_current_hourly_field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.container_main_section_current_hourly_field_child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1.5px solid #ccc;
+  padding: 10px 20px;
+
+  .hours {
+    font-size: 16px;
+  }
+
+  img {
+    margin-top: 5px;
+  }
+
+  .temperature {
+    font-weight: 500;
+    color: #000;
+  }
+}
+
+.container_main_section_weekly {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* border: 1px solid #ccc; */
+  border-left: 1.5px solid #ccc;
+  width: 50%;
+  color: hsl(0, 0%, 50%);
+  font-size: 20px;
+}
+
+.container_main_section_weekly_cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 50px;
+}
+
+.container_main_section_weekly_cards_field {
+  max-width: 450px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  /* border: 1px solid #ccc; */
+  padding: 10px 0;
+  padding-left: 10px;
+  padding-right: 18px;
+}
+
+.container_main_section_weekly_cards_field_left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid #ccc; */
+  padding: 5px 0;
+  height: 100%;
+}
+
+.container_main_section_weekly_cards_field_left_heading {
+  font-weight: 500;
+  color: #000;
+}
+
+.container_main_section_weekly_cards_field_left_status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    margin-left: 3px;
+    font-size: 14px;
+  }
+}
+
+.container_main_section_weekly_cards_field_center {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* border: 1px solid #ccc; */
+  padding: 3px 0;
+}
+
+.container_main_section_weekly_cards_field_center_top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+
+.container_main_section_weekly_cards_field_center_bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+
+  img {
+    margin-right: 5px;
+  }
+}
+
+.container_main_section_weekly_cards_field_right {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  /* border: 1px solid #ccc; */
+  padding: 3px 0;
+}
+
+.container_main_section_weekly_cards_field_right_top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+
+  img {
+    margin-right: 5px;
+  }
+}
+
+.container_main_section_weekly_cards_field_right_bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+
+  img {
+    margin-right: 5px;
+  }
+}
